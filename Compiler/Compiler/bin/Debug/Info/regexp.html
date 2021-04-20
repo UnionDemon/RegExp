@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Лабораторная работа 4 "Регулярные выражения"</title>
+</head>
+<body>
+	<h1>Решение задач по теме "Регулярные выражения"</h1><br>
+	<ol>
+		<li> <a href="#12"><b>Задача 12</b></a></li>
+		<li> <a href="#15"><b>Задача 15</b></a></li>
+		<li> <a href="#19"><b>Задача 19</b></a></li>
+	</ol>
+	<h3 id="12">Задача 12.</h3>
+	<p>Условие задачи:</p>
+	<p>Описать язык, порождаемый следующим регулярным выражением: (0|1)*0(0|1)(0|1)</p>
+	<p>Решение:</p>
+	<p>L(G<sub>12</sub>) = {(0|1)<sup>n</sup>000 | (0|1)<sup>n</sup>001 | (0|1)<sup>n</sup>010 | (0|1)<sup>n</sup>011, n >= 0}.</p>
+	<p>Преобразуем регулярное выражение в НКА без &epsilon;-переходов (см. рисунок 1):</p>
+	<br><img src="images\nka.jpg" width="445px" height="117px" style=" margin-left: 37%; margin-right:37%">
+	<figcaption style=" text-align: center">Рисунок 1 - НКА без &epsilon;-переходов</figcaption><br>	
+	<p>Преобразование НКА в ДКА представлено в виде таблицы (см. рисунок 2):</p>
+	<br><img src="images\table.jpg" width="736px" height="291px" style=" margin-left: 28%; margin-right:28%">
+	<figcaption style=" text-align: center">Рисунок 2 - Преобразование НКА в ДКА</figcaption><br>
+	<p>Преобразованный ДКА представлен на рисунке 3:</p>
+	<br><img src="images\dka.jpg" width="480px" height="443px" style=" margin-left: 37%; margin-right:37%">
+	<figcaption style=" text-align: center">Рисунок 3 - Преобразованный ДКА</figcaption><br>
+	<h3 id="15">Задача 15.</h3>
+	<p>Условие задачи:</p>
+	<p>Написать регулярное выражение R для языка L(R):</p>
+	<p>Все строки из нулей и единиц, с четным числом нулей и нечетным числом единиц.</p>
+	<p>Решение:</p>
+	<p>L(R) = {0<sup>2n</sup>1<sup>2m+1</sup>, n >= 0, m >= 0}</p>
+	<br>
+	<h3 id="19">Задача 19.</h3>
+	<p>Условие задачи:</p>
+	<p>На основании свойств регулярных выражений доказать тождества для произвольных R<sub>1</sub>, R<sub>2</sub>:</p>
+	<p>R<sub>2</sub> | R<sub>2</sub>R<sub>1</sub> | R<sub>2</sub>R<sub>1</sub>* = R<sub>2</sub>R<sub>1</sub>*</p>
+	<p>Решение:</p>
+	<p>R<sub>2</sub> | R<sub>2</sub>R<sub>1</sub> | R<sub>2</sub>R<sub>1</sub>* = R<sub>2</sub>R<sub>1</sub>*</p>
+	<p>По свойству 4 "Операция конкатенации дистрибутивна":</p>
+	<p>R<sub>2</sub> (&epsilon; | R<sub>1</sub> | R<sub>1</sub>*) = R<sub>2</sub>R<sub>1</sub>*</p>
+	<p>По определению R<sub>1</sub>* = &epsilon; | R<sub>1</sub> | R<sub>1</sub><sup>2</sup> | ... | R<sub>1</sub><sup>n</sup>, следовательно: </p>
+	<p>R<sub>2</sub>R<sub>1</sub>* = R<sub>2</sub>R<sub>1</sub>*, что и требовалось доказать.</p>
+	<p>Для поиска в тексте подстрок пусть R<sub>1</sub> = 1*2, R<sub>2</sub> = ab*.</p> 
+	<p>Опишем язык, порождаемый регулярным выражением: R<sub>2</sub>R<sub>1</sub>*:</p>
+	<p>L(G<sub>19</sub>)={(ab<sup>l</sup>)(1<sup>n</sup>2)<sup>k</sup>, l &ge; 0, n &ge; 0, k &ge; 0}.
+</body>
+</html>
